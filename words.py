@@ -4,10 +4,13 @@ def count_words(frase):
     result = {}
     list = frase.split(' ')
     for word in list:
-            if word == '':
-                return "Sin palabras"
-            else:
-                result[word] = 1
+        lower_word = word.lower()
+        if lower_word == '':
+            return "Sin palabras"
+        elif lower_word in result:
+            result[lower_word] += 1
+        else:
+            result[lower_word] = 1
     return result
 
     
