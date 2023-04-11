@@ -59,11 +59,14 @@ class TestCountWords(unittest.TestCase):
                  'habla':1,
                  'muchos':1,
                  'idiomas.':1,
-                 'Espanol,':1,
+                 'espanol,':1,
                  'ingles,':1,
                  'chino':1,
                  'y':1,
                  'frances.':1})
+    def test_hola(self):
+        result = count_words('Hola hola hola hola hola hola')
+        self.assertEqual(result, {'hola':6,})
 
 if __name__ == '__main__':
     unittest.main()
